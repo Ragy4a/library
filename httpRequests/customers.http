@@ -1,0 +1,38 @@
+GET http://localhost:5000/customers
+
+###
+
+GET http://localhost:5000/customers/10
+
+###
+
+POST http://localhost:5000/customers
+Content-Type: application/json
+
+{
+  "full_name": "Jhon Do3646346e",
+  "email": "j-d@gmail.com",
+  "phone": null,
+  "createdAt": "2023-10-21T09:00:24.282Z",
+  "updatedAt": "2023-10-21T09:00:24.282Z",
+  "password": "$2b$10$6hfNBzmZCAXn37rYnc/rNOJaXcR4hSLbvxKpNE.dPT1kRPy5nQGBC"
+}
+
+###
+
+PUT http://localhost:5000/customers
+Content-Type: application/json
+
+{
+  "id": 15,
+  "full_name": "Jhon w22dqwd",
+  "email": "j-d@gmail.com",
+  "phone": null,
+  "createdAt": "2023-10-21T09:00:24.282Z",
+  "updatedAt": "2023-10-21T09:00:24.282Z",
+  "password": "$2b$10$6hfNBzmZCAXn37rYnc/rNOJaXcR4hSLbvxKpNE.dPT1kRPy5nQGBC"
+}
+
+###
+
+DELETE http://localhost:5000/customers/15

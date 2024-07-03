@@ -1,0 +1,36 @@
+GET http://localhost:5000/authors
+
+###
+
+GET http://localhost:5000/authors/1
+
+###
+
+POST http://localhost:5000/authors
+Content-Type: application/json
+
+{
+  "full_name": "Ernest Hemingway 141241414",
+  "email": "e-h@gmail.com",
+  "nationality": "USA",
+  "createdAt": "2023-10-21T09:09:10.310Z",
+  "updatedAt": "2023-10-21T09:09:10.310Z"
+}
+
+###
+
+PUT http://localhost:5000/authors
+Content-Type: application/json
+
+{
+  "id": 1,
+  "full_name": "Ernest Hemingway22222",
+  "email": "e-h@gmail.com",
+  "nationality": "USA",
+  "createdAt": "2023-10-21T09:09:10.310Z",
+  "updatedAt": "2023-10-21T09:09:10.310Z"
+}
+
+###
+
+DELETE http://localhost:5000/authors/
