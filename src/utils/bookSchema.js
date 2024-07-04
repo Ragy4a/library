@@ -1,7 +1,7 @@
 const yup = require('yup');
 
 const BOOK_VALIDATION = yup.object().shape({
-    title: yup.string().required(),
+    title: yup.string().required('The title of book is required!'),
     description: yup.string().nullable(),
     createdAt: yup
         .date('This field must be a date.')

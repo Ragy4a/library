@@ -10,8 +10,8 @@ POST http://localhost:5000/authors
 Content-Type: application/json
 
 {
-  "full_name": "Ernest Hemingway 141241414",
-  "email": "e-h@gmail.com",
+  "full_name": "Ernest Hemingway 1412414232214",
+  "email": "e-h222@gmail.com",
   "nationality": "USA",
   "createdAt": "2023-10-21T09:09:10.310Z",
   "updatedAt": "2023-10-21T09:09:10.310Z"
@@ -24,7 +24,7 @@ Content-Type: application/json
 
 {
   "id": 1,
-  "full_name": "Ernest Hemingway22222",
+  "full_name": "Ernest Hemingway",
   "email": "e-h@gmail.com",
   "nationality": "USA",
   "createdAt": "2023-10-21T09:09:10.310Z",
@@ -33,4 +33,4 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:5000/authors/
+DELETE http://localhost:5000/authors/20

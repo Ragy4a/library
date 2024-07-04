@@ -7,7 +7,7 @@ class BookController {
           const { rows } = await db.query(`SELECT id, title FROM books`);
           res.status(200).json(rows);
         } catch (err) {
-          res.status(500).send('Server error!');
+          res.status(500).send(err.message);
         }
       };
       
@@ -33,7 +33,7 @@ class BookController {
           }
           res.status(200).json(rows[0]);
         } catch (err) {
-          res.status(500).send('Server error!');
+          res.status(500).send(err.message);
         }
       };
       
@@ -63,7 +63,7 @@ class BookController {
           );
           res.status(201).json(rows[0]);
         } catch (err) {
-          res.status(400).send(err);
+          res.status(400).send(err.message);
         }
       };
       
@@ -89,7 +89,7 @@ class BookController {
           }
           res.status(200).json(rows[0]);
         } catch (err) {
-          res.status(400).send('Server error!');
+          res.status(400).send(err.message);
         }
       };
       
@@ -106,7 +106,7 @@ class BookController {
           }
           res.status(204).end();
         } catch (err) {
-          res.status(500).send('Server error!');
+          res.status(500).send(err.message);
         }
       };
 };

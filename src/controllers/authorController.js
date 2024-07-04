@@ -7,7 +7,7 @@ class AuthorController {
           const { rows } = await db.query(`SELECT id, full_name FROM authors`);
           res.status(200).json(rows);
         } catch (err) {
-          res.status(500).send('Server error!');
+          res.status(500).send(err.message);
         }
       };
       
@@ -30,7 +30,7 @@ class AuthorController {
           }
           res.status(200).json(rows[0]);
         } catch (err) {
-          res.status(500).send('Server error!');
+          res.status(500).send(err.message);
         }
       };
       
@@ -55,22 +55,21 @@ class AuthorController {
             );
             res.status(201).json(rows[0]);
         } catch (err) {
-            res.status(400).send('Server error!');
+            res.status(400).send(err.message);
         }        
     };    
       
       updateAuthor = async (req, res) => {
         try {
           const { id, full_name, email, nationality, createdAt, updatedAt } = req.body;
-          console.log("Executing SQL with parameters:", [full_name, email, nationality, createdAt, updatedAt]);
           const { rows } = await db.query(
-            `UPDATE books
+            `UPDATE authors
             SET 
               full_name = $2,
               email = $3,
               nationality_id = (SELECT id FROM nationalities WHERE title=$4),
               "createdAt" = $5,
-              "updatedAt" = $6, 
+              "updatedAt" = $6
             WHERE id = $1
             RETURNING *`,
             [id, full_name, email, nationality, createdAt, updatedAt]
@@ -80,7 +79,7 @@ class AuthorController {
           }
           res.status(200).json(rows[0]);
         } catch (err) {
-          res.status(400).send('Server error!');
+          res.status(400).send(err.message);
         }
       };
       
@@ -97,7 +96,7 @@ class AuthorController {
           }
           res.status(204).end();
         } catch (err) {
-          res.status(500).send('Server error!');
+          res.status(500).send(err.message);
         }
       };
 };

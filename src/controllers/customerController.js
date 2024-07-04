@@ -7,7 +7,7 @@ class CustomerConroller {
           const { rows } = await db.query(`SELECT id, full_name FROM customers`);
           res.status(200).json(rows);
         } catch (err) {
-          res.status(500).send('Server error!');
+          res.status(500).send(err.message);
         }
       };
       
@@ -30,7 +30,7 @@ class CustomerConroller {
           }
           res.status(200).json(rows[0]);
         } catch (err) {
-          res.status(500).send('Server error!');
+          res.status(500).send(err.message);
         }
       };
       
@@ -57,7 +57,7 @@ class CustomerConroller {
             );
             res.status(201).json(rows[0]);
         } catch (err) {
-            res.status(400).send('Server error!');
+            res.status(400).send(err.message);
         }        
     };    
       
@@ -82,7 +82,7 @@ class CustomerConroller {
           }
           res.status(200).json(rows[0]);
         } catch (err) {
-          res.status(400).send('Server error!');
+          res.status(400).send(err.message);
         }
       };
       
@@ -99,7 +99,7 @@ class CustomerConroller {
           }
           res.status(204).end();
         } catch (err) {
-          res.status(500).send('Server error!');
+          res.status(500).send(err.message);
         }
       };
 };

@@ -1,7 +1,7 @@
 const yup = require('yup');
 
 const CUSTOMER_VALIDATION = yup.object().shape({
-    full_name: yup.string().required(),
+    full_name: yup.string().required('The fullname is required!'),
     email: yup.string(),
     phone: yup.string().nullable(),
     createdAt: yup
